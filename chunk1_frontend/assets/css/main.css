@@ -2446,6 +2446,9 @@ input, select, textarea {
 
 	}
 
+
+	/* CUSTOM CSS */
+
 .progress-skill {
   margin-bottom: 25px;
 }
@@ -2485,8 +2488,6 @@ input, select, textarea {
   transition: width 1s ease-in-out;
 }
 
-/* CUSTOM CSS */
-
 .progress-skill {
   margin-bottom: 25px;
   max-width: 90%;  /* Adjust this to your preferred width */
@@ -2522,7 +2523,6 @@ input, select, textarea {
   text-align: left;
 }
 
-/* Only center h2 headers */
 .wrapper.style0-left h2 {
   text-align: center;
 }
