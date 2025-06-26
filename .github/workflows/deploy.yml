@@ -5,8 +5,9 @@ on:
     branches:
       - master
     paths:
-      - 'cloud_resume_challenge/chunk1_frontend/**'  # only trigger when frontend changes
-  workflow_dispatch: 
+      - 'cloud_resume_challenge/chunk1_frontend/**'
+  workflow_dispatch:
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -24,4 +25,4 @@ jobs:
 
     - name: Sync frontend to S3
       run: aws s3 sync . s3://monvillarin.com --delete
-      working-directory: cloud_resume_challenge/chunk1_frontend
+      working-directory: chunk1_frontend
