@@ -6,7 +6,6 @@ on:
       - master
     paths:
       - 'cloud_resume_challenge/chunk1_frontend/**'
-  workflow_dispatch:
 
 jobs:
   deploy:
