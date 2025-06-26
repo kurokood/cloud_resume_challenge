@@ -6,7 +6,7 @@ on:
       - master
     paths:
       - 'cloud_resume_challenege/chunk1_frontend/**'  # only trigger when frontend changes
-
+  workflow_dispatch: 
 jobs:
   deploy:
     runs-on: ubuntu-latest
