@@ -23,4 +23,3 @@ jobs:
       - name: Sync files to S3
         run: |
           aws s3 sync cloud_resume_challenege\chunk1_frontend s3://monvillarin.com --delete
-        working-directory: chunk1_frontend
