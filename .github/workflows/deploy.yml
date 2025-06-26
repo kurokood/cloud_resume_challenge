@@ -23,5 +23,5 @@ jobs:
         aws-region: us-east-1
 
     - name: Sync frontend to S3
-      run: |
-        aws s3 sync cloud_resume_challenege/chunk1_frontend/ s3://monvillarin.com --delete
+      run: aws s3 sync . s3://monvillarin.com --delete
+      working-directory: cloud_resume_challenege/chunk1_frontend
