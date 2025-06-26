@@ -26,3 +26,9 @@ jobs:
     - name: Sync frontend to S3
       run: aws s3 sync . s3://monvillarin.com --delete
       working-directory: chunk1_frontend
+
+    - name: Invalidate CloudFront Caches
+      run: |
+        aws cloudfront create-invalidation --distribution-id EQF3Y3Z48KAQW --paths "/*"
+        aws cloudfront create-invalidation --distribution-id E33RPQ3DTU6UMK --paths "/*"
+
