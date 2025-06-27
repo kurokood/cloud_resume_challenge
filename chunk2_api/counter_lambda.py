@@ -1,49 +1,82 @@
 import boto3
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('VisitorCounter')
+table = dynamodb.Table('VisitorAnalytics')
 
 def lambda_handler(event, context):
-    # Extract IP
-    ip = (
+    # Extract IP address
+    id = (
         event.get("requestContext", {}).get("http", {}).get("sourceIp") or
         event.get("headers", {}).get("X-Forwarded-For", '').split(',')[0] or
         "test-ip"
     )
 
-    # Use today's date as ID
-    today = datetime.utcnow().strftime('%Y-%m-%d')
+    now = datetime.utcnow()
+    now_str = now.isoformat()
+    is_unique = False
 
-    # Get today's record
-    response = table.get_item(Key={'id': today})
-    item = response.get('Item', {})
+    # Try to get existing IP record
+    try:
+        response = table.get_item(Key={'id': id})
+        item = response.get('Item')
+    except Exception as e:
+        return {
+            'statusCode': 500,
+            'body': json.dumps({
+                'error': 'DynamoDB GetItem failed',
+                'details': str(e)
+            })
+        }
 
-    count = item.get('site_count', 0)
-    ip_set = set(item.get('ip_set', []))
+    if item:
+        last_seen_str = item.get('last_seen')
+        try:
+            last_seen_time = datetime.fromisoformat(last_seen_str)
+        except:
+            last_seen_time = now - timedelta(days=1, seconds=1)
 
-    if ip not in ip_set:
-        count += 1
-        ip_set.add(ip)
-
-        table.put_item(Item={
-            'id': today,
-            'site_count': count,
-            'ip_set': list(ip_set)
-        })
-
-        is_unique = True
+        if now - last_seen_time > timedelta(hours=24):
+            is_unique = True
     else:
-        is_unique = False
+        is_unique = True
+
+    if is_unique:
+        try:
+            table.put_item(Item={
+                'id': id,
+                'last_seen': now_str
+            })
+        except Exception as e:
+            return {
+                'statusCode': 500,
+                'body': json.dumps({
+                    'error': 'DynamoDB PutItem failed',
+                    'details': str(e)
+                })
+            }
+
+    # Count all IPs (each represents one unique visitor in the last 24h window)
+    try:
+        scan = table.scan(Select='COUNT')
+        total_visits = scan.get('Count', 0)
+    except Exception as e:
+        return {
+            'statusCode': 500,
+            'body': json.dumps({
+                'error': 'DynamoDB Scan failed',
+                'details': str(e)
+            })
+        }
 
     return {
         'statusCode': 200,
         'headers': {'Access-Control-Allow-Origin': '*'},
         'body': json.dumps({
-            'date': today,
-            'ip': ip,
-            'count': int(count),
-            'new_today': is_unique
+            'id': id,
+            'new_unique_visit': is_unique,
+            'timestamp': now_str,
+            'total_unique_visits': total_visits
         })
     }
