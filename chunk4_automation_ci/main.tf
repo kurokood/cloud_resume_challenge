@@ -337,6 +337,156 @@ resource "aws_acm_certificate" "monvillarin_com" {
   tags = {}
 }
 
-# API #
+# DYNAMODB, LAMBDA, IAM ROLE, API GATEWAY #
 
+resource "aws_dynamodb_table" "visitors_analytics" {
+  name         = "VisitorAnalytics"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "id"
 
+  attribute {
+    name = "id"
+    type = "S"
+  }
+}
+
+resource "aws_lambda_function" "visitor_counter" {
+  function_name    = "VisitorCounter"
+  role             = aws_iam_role.visitor_counter.arn
+  handler          = "lambda_function.lambda_handler"
+  runtime          = "python3.13"
+  filename         = "counter_lambda_function.zip"
+  source_code_hash = filebase64sha256("counter_lambda_function.zip")
+  timeout          = 3
+  memory_size      = 128
+  package_type     = "Zip"
+
+  ephemeral_storage {
+    size = 512
+  }
+
+  logging_config {
+    log_format = "Text"
+    log_group  = "/aws/lambda/VisitorCounter"
+  }
+
+  tracing_config {
+    mode = "PassThrough"
+  }
+}
+
+resource "aws_iam_role" "visitor_counter" {
+  name = "visitor-counter-role"
+  path = "/service-role/"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Effect = "Allow",
+        Principal = {
+          Service = "lambda.amazonaws.com"
+        },
+        Action = "sts:AssumeRole"
+      }
+    ]
+  })
+}
+
+resource "aws_iam_policy" "visitor_counter" {
+  name        = "visitor-counter-policy"
+  description = "Allows Lambda to log to CloudWatch and access DynamoDB"
+
+  policy = jsonencode({
+    "Version" : "2012-10-17",
+    "Statement" : [
+      {
+        "Effect" : "Allow",
+        "Action" : [
+          "logs:CreateLogGroup"
+        ],
+        "Resource" : "arn:aws:logs:us-east-1:026045577315:*"
+      },
+      {
+        "Effect" : "Allow",
+        "Action" : [
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ],
+        "Resource" : [
+          "arn:aws:logs:us-east-1:026045577315:log-group:/aws/lambda/VisitorCounter:*"
+        ]
+      },
+      {
+        "Sid" : "UpdateDynamoDB",
+        "Effect" : "Allow",
+        "Action" : [
+          "dynamodb:UpdateItem",
+          "dynamodb:GetItem",
+          "dynamodb:PutItem",
+          "dynamodb:Scan"
+        ],
+        "Resource" : [
+          "arn:aws:dynamodb:us-east-1:026045577315:table/VisitorAnalytics"
+        ]
+      }
+    ]
+  })
+}
+
+resource "aws_iam_policy_attachment" "visitor_counter" {
+  name       = "visitor-counter-attach-policy"
+  roles      = [aws_iam_role.visitor_counter.name]
+  policy_arn = aws_iam_policy.visitor_counter.arn
+}
+
+# Create the API Gateway
+resource "aws_apigatewayv2_api" "http_api" {
+  name          = "visitor-counter-api"
+  protocol_type = "HTTP"
+  description   = "HTTP API for VisitorCounter Lambda"
+  cors_configuration {
+    allow_origins = ["*"]
+    allow_methods = ["GET", "POST", "OPTIONS"]
+    allow_headers = ["*"]
+  }
+}
+
+# Create a Lambda Integration
+resource "aws_apigatewayv2_integration" "lambda_integration" {
+  api_id                 = aws_apigatewayv2_api.http_api.id
+  integration_type       = "AWS_PROXY"
+  integration_uri        = aws_lambda_function.visitor_counter.invoke_arn
+  integration_method     = "GET"
+  payload_format_version = "2.0"
+}
+
+# Create a route for the integration
+resource "aws_apigatewayv2_route" "default_route" {
+  api_id    = aws_apigatewayv2_api.http_api.id
+  route_key = "GET /"
+
+  target = "integrations/${aws_apigatewayv2_integration.lambda_integration.id}"
+}
+
+# Create a default stage with throttling
+resource "aws_apigatewayv2_stage" "default" {
+  api_id      = aws_apigatewayv2_api.http_api.id
+  name        = "$default"
+  auto_deploy = true
+
+  default_route_settings {
+    throttling_burst_limit = 10
+    throttling_rate_limit  = 5
+  }
+}
+
+# Lambda permission to allow API Gateway to invoke it
+resource "aws_lambda_permission" "apigw_invoke" {
+  statement_id  = "AllowAPIGatewayInvoke"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.visitor_counter.function_name
+  principal     = "apigateway.amazonaws.com"
+
+  source_arn = "${aws_apigatewayv2_api.http_api.execution_arn}/*/*"
+}

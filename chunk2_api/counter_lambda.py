@@ -3,7 +3,7 @@ import json
 from datetime import datetime, timedelta
 
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('VisitorAnalytics')
+table = dynamodb.Table('SiteAnalytics')
 
 def lambda_handler(event, context):
     # Extract IP address
