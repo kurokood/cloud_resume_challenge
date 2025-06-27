@@ -2446,11 +2446,11 @@ input, select, textarea {
 
 	}
 
-
 	/* CUSTOM CSS */
 
+/* SKILLS SECTION CUSTOM CSS */
 .progress-skill {
-  margin-bottom: 25px;
+ margin-bottom: 25px;
 }
 
 .progress-header {
@@ -2501,6 +2501,7 @@ input, select, textarea {
   line-height: 1.5em;
 }
 
+/* PROFILE PHOTO SECTION CUSTOM CSS */
 .profile-pic {
   display: block;
   width: 100%;
@@ -2511,36 +2512,7 @@ input, select, textarea {
   object-fit: cover;  /* Ensures it fills the circle nicely */
 }
 
-.wrapper.style0-left {
-  background: #ffffff; /* White background */
-  padding: 4em 2em 2em 2em;
-  text-align: left;
-}
-
-.wrapper.style0-left .container {
-  margin: 0 auto;
-  max-width: 100%;
-  text-align: left;
-}
-
-.wrapper.style0-left h2 {
-  text-align: center;
-}
-
-.wrapper.style0-left h1,
-.wrapper.style0-left h3,
-.wrapper.style0-left h4,
-.wrapper.style0-left p,
-.wrapper.style0-left ul {
-  text-align: left;
-}
-
-@media screen and (max-width: 736px) {
-  .wrapper.style0-left {
-    padding: 2em 1em;
-  }
-}
-
+/* TIMELINE SECTION CUSTOM CSS */
 .wrapper.resume-style {
 	background-color: #f4f4f4;
 	text-shadow: 1px 1px 0px #fff;
@@ -2551,38 +2523,10 @@ input, select, textarea {
 	position: relative;
 	max-width: 1200px;
 	margin: 100px auto;
-	
-}
-.resume-container{
-	padding: 10px 30px;
-	position: relative;
-}
-.resume-container-title{
-	padding: 10px 40px;
-	position: relative;
-}
-.resume-container-title img{
-	position: absolute;
-	width: 50px;
-	border-radius: 100%;
-	left: -24px;
-	top: -1px;
-	z-index: 10;
-}
-.text-box{
-	padding: 20px 30px;
-	background: #fff;
-	position: relative;
-	border-radius: 6px;
-	font-size: 15px;
-}
-.resume-container img{
-	position: absolute;
-	width: 30px;
-	border-radius: 50%;
-	left: -13px;
-	top: 32px;
-	z-index: 10;
+	margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 .timeline::after{
 	content: '';
@@ -2595,26 +2539,58 @@ input, select, textarea {
 	z-index: 1;
 }
 
-.columns {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  flex-wrap: wrap;
+.timeline-education{
+	position: relative;
+	max-width: 1200px;
+	margin: 100px auto;
+	margin-top: 40px;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.timeline-education::after{
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 100%;
+	background: #7fb3d5;
+	top: 0;
+	bottom: 0;
+	z-index: 1;
 }
 
-.column-left,
-.column-right {
-  flex: 1;
-  box-sizing: border-box;
+.resume-container-title{
+	padding: 0px 40px;
+	position: relative;
+}
+.resume-container-title img{
+	position: absolute;
+	width: 50px;
+	border-radius: 100%;
+	left: -24px;
+	top: -1px;
+	z-index: 10;
 }
 
-@media (max-width: 768px) {
-  .columns {
-    flex-direction: column;
-    gap: 10px; /* reduce gap between stacked columns */
-  }
+.resume-container{
+	padding: 10px 30px;
+	position: relative;
 }
-
+.resume-container img{
+	position: absolute;
+	width: 30px;
+	border-radius: 50%;
+	left: -13px;
+	top: 32px;
+	z-index: 10;
+}
+.text-box{
+	padding: 20px 30px;
+	background: #fff;
+	position: relative;
+	border-radius: 6px;
+	font-size: 15px;
+}
 .badge-img {
   width: 30% !important;
   float: left;
@@ -2624,5 +2600,19 @@ input, select, textarea {
   border-radius: 0 !important;  /* override circle */
 }
 
-
+.columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.column-left,
+.column-right {
+  flex: 1;
+  box-sizing: border-box;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
