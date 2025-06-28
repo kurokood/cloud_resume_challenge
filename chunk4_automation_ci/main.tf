@@ -14,11 +14,11 @@ terraform {
   }
 }
 
-# CHUNK 1: S3, CLOUDFRONT, CERTIFICATE MANAGER, ROUTE53 #
-
 provider "aws" {
   region = "us-east-1"
 }
+
+# CHUNK 1: S3, CLOUDFRONT, CERTIFICATE MANAGER, ROUTE53 #
 
 resource "aws_s3_bucket" "monvillarin_com" {
   bucket = "monvillarin.com"
@@ -339,24 +339,25 @@ resource "aws_acm_certificate" "monvillarin_com" {
 
 # DYNAMODB, LAMBDA, IAM ROLE, API GATEWAY #
 
-resource "aws_dynamodb_table" "visitors_analytics" {
-  name         = "VisitorAnalytics"
+resource "aws_dynamodb_table" "site_analytics" {
+  name         = "SiteAnalytics"
   billing_mode = "PAY_PER_REQUEST"
-  hash_key     = "id"
+  hash_key     = "ip"
 
   attribute {
-    name = "id"
+    name = "ip"
     type = "S"
   }
 }
 
-resource "aws_lambda_function" "visitor_counter" {
-  function_name    = "VisitorCounter"
-  role             = aws_iam_role.visitor_counter.arn
+# Create lambda function
+resource "aws_lambda_function" "site_analytics" {
+  function_name    = "SiteAnalytics-lambda-function"
+  role             = aws_iam_role.site_analytics.arn
   handler          = "lambda_function.lambda_handler"
   runtime          = "python3.13"
-  filename         = "counter_lambda_function.zip"
-  source_code_hash = filebase64sha256("counter_lambda_function.zip")
+  filename         = "SiteAnalytics_function.zip"
+  source_code_hash = filebase64sha256("SiteAnalytics_function.zip")
   timeout          = 3
   memory_size      = 128
   package_type     = "Zip"
@@ -367,7 +368,7 @@ resource "aws_lambda_function" "visitor_counter" {
 
   logging_config {
     log_format = "Text"
-    log_group  = "/aws/lambda/VisitorCounter"
+    log_group  = "/aws/lambda/SiteCounter"
   }
 
   tracing_config {
@@ -375,8 +376,9 @@ resource "aws_lambda_function" "visitor_counter" {
   }
 }
 
-resource "aws_iam_role" "visitor_counter" {
-  name = "visitor-counter-role"
+# Create IAM role
+resource "aws_iam_role" "site_analytics" {
+  name = "SiteAnalytics-role"
   path = "/service-role/"
 
   assume_role_policy = jsonencode({
@@ -393,8 +395,9 @@ resource "aws_iam_role" "visitor_counter" {
   })
 }
 
-resource "aws_iam_policy" "visitor_counter" {
-  name        = "visitor-counter-policy"
+# Create IAM policy
+resource "aws_iam_policy" "site_analytics" {
+  name        = "SiteAnalytics-policy"
   description = "Allows Lambda to log to CloudWatch and access DynamoDB"
 
   policy = jsonencode({
@@ -405,7 +408,7 @@ resource "aws_iam_policy" "visitor_counter" {
         "Action" : [
           "logs:CreateLogGroup"
         ],
-        "Resource" : "arn:aws:logs:us-east-1:026045577315:*"
+        "Resource" : "arn:aws:logs:${var.region}:${data.aws_caller_identity.current.account_id}:*"
       },
       {
         "Effect" : "Allow",
@@ -414,7 +417,7 @@ resource "aws_iam_policy" "visitor_counter" {
           "logs:PutLogEvents"
         ],
         "Resource" : [
-          "arn:aws:logs:us-east-1:026045577315:log-group:/aws/lambda/VisitorCounter:*"
+          "arn:aws:logs:${var.region}:${data.aws_caller_identity.current.account_id}:log-group:/aws/lambda/${aws_lambda_function.site_analytics.function_name}:*"
         ]
       },
       {
@@ -427,22 +430,22 @@ resource "aws_iam_policy" "visitor_counter" {
           "dynamodb:Scan"
         ],
         "Resource" : [
-          "arn:aws:dynamodb:us-east-1:026045577315:table/VisitorAnalytics"
+          "arn:aws:dynamodb:${var.region}:${data.aws_caller_identity.current.account_id}:table/${aws_dynamodb_table.site_analytics.name}"
         ]
       }
     ]
   })
 }
 
-resource "aws_iam_policy_attachment" "visitor_counter" {
-  name       = "visitor-counter-attach-policy"
-  roles      = [aws_iam_role.visitor_counter.name]
-  policy_arn = aws_iam_policy.visitor_counter.arn
+resource "aws_iam_policy_attachment" "site_analytics" {
+  name       = "SiteAnalytics-attach-policy"
+  roles      = [aws_iam_role.site_analytics.name]
+  policy_arn = aws_iam_policy.site_analytics.arn
 }
 
 # Create the API Gateway
-resource "aws_apigatewayv2_api" "http_api" {
-  name          = "visitor-counter-api"
+resource "aws_apigatewayv2_api" "site_analytics_api" {
+  name          = "SiteAnalytics-api"
   protocol_type = "HTTP"
   description   = "HTTP API for VisitorCounter Lambda"
   cors_configuration {
@@ -453,25 +456,25 @@ resource "aws_apigatewayv2_api" "http_api" {
 }
 
 # Create a Lambda Integration
-resource "aws_apigatewayv2_integration" "lambda_integration" {
-  api_id                 = aws_apigatewayv2_api.http_api.id
+resource "aws_apigatewayv2_integration" "site_analytics_lambda_integration" {
+  api_id                 = aws_apigatewayv2_api.site_analytics_api.id
   integration_type       = "AWS_PROXY"
-  integration_uri        = aws_lambda_function.visitor_counter.invoke_arn
-  integration_method     = "GET"
+  integration_uri        = aws_lambda_function.site_analytics.invoke_arn
+  integration_method     = "POST"
   payload_format_version = "2.0"
 }
 
 # Create a route for the integration
-resource "aws_apigatewayv2_route" "default_route" {
-  api_id    = aws_apigatewayv2_api.http_api.id
+resource "aws_apigatewayv2_route" "site_analytics_default_route" {
+  api_id    = aws_apigatewayv2_api.site_analytics_api.id
   route_key = "GET /"
 
-  target = "integrations/${aws_apigatewayv2_integration.lambda_integration.id}"
+  target = "integrations/${aws_apigatewayv2_integration.site_analytics_lambda_integration.id}"
 }
 
 # Create a default stage with throttling
-resource "aws_apigatewayv2_stage" "default" {
-  api_id      = aws_apigatewayv2_api.http_api.id
+resource "aws_apigatewayv2_stage" "site_analytics_default_stage" {
+  api_id      = aws_apigatewayv2_api.site_analytics_api.id
   name        = "$default"
   auto_deploy = true
 
@@ -482,11 +485,11 @@ resource "aws_apigatewayv2_stage" "default" {
 }
 
 # Lambda permission to allow API Gateway to invoke it
-resource "aws_lambda_permission" "apigw_invoke" {
+resource "aws_lambda_permission" "site_analytics_permission" {
   statement_id  = "AllowAPIGatewayInvoke"
   action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.visitor_counter.function_name
+  function_name = aws_lambda_function.site_analytics.function_name
   principal     = "apigateway.amazonaws.com"
 
-  source_arn = "${aws_apigatewayv2_api.http_api.execution_arn}/*/*"
+  source_arn = "${aws_apigatewayv2_api.site_analytics_api.execution_arn}/*/*"
 }

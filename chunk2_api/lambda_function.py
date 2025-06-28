@@ -7,7 +7,7 @@ table = dynamodb.Table('SiteAnalytics')
 
 def lambda_handler(event, context):
     # Extract IP address
-    id = (
+    ip = (
         event.get("requestContext", {}).get("http", {}).get("sourceIp") or
         event.get("headers", {}).get("X-Forwarded-For", '').split(',')[0] or
         "test-ip"
@@ -19,7 +19,7 @@ def lambda_handler(event, context):
 
     # Try to get existing IP record
     try:
-        response = table.get_item(Key={'id': id})
+        response = table.get_item(Key={'ip': ip})
         item = response.get('Item')
     except Exception as e:
         return {
@@ -45,7 +45,7 @@ def lambda_handler(event, context):
     if is_unique:
         try:
             table.put_item(Item={
-                'id': id,
+                'ip': ip,
                 'last_seen': now_str
             })
         except Exception as e:
@@ -74,7 +74,7 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'headers': {'Access-Control-Allow-Origin': '*'},
         'body': json.dumps({
-            'id': id,
+            'ip': ip,
             'new_unique_visit': is_unique,
             'timestamp': now_str,
             'total_unique_visits': total_visits
