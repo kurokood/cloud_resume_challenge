@@ -138,10 +138,6 @@ resource "aws_acm_certificate_validation" "monvillarin" {
   validation_record_fqdns = [for record in aws_route53_record.monvillarin_validation : record.fqdn]
 }
 
-resource "aws_route53_zone" "monvillarin" {
-  name = "monvillarin.com"
-}
-
 resource "aws_route53_record" "monvillarin_apex" {
   zone_id = aws_route53_zone.monvillarin.zone_id
   name    = "monvillarin.com"
