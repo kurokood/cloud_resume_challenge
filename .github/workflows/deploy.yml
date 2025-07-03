@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - 'cloud_resume_challenge/front-end/**'
+      - 'cloud_resume_challenge/frontend/**'
   workflow_dispatch:
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
 
     - name: Sync frontend to S3
       run: aws s3 sync . s3://monvillarin.com --delete
-      working-directory: front-end
+      working-directory: frontend
 
     - name: Invalidate CloudFront Caches
       run: |
