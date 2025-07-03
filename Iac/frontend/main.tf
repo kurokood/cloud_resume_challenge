@@ -281,3 +281,4 @@ resource "aws_route53_record" "soa" {
   ttl     = 900
   records = ["ns-480.awsdns-60.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"]
 }
+
