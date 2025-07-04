@@ -158,53 +158,12 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   http_version        = "http2"
   price_class         = "PriceClass_100"
 
-  aliases = ["monvillarin.com"]
+  aliases = ["monvillarin.com", "www.monvillarin.com"]
 
   default_cache_behavior {
     allowed_methods        = ["GET", "HEAD"]
     cached_methods         = ["GET", "HEAD"]
     target_origin_id       = "monvillarin.com.s3.us-east-1.amazonaws.com"
-    viewer_protocol_policy = "redirect-to-https"
-    compress               = true
-    cache_policy_id        = data.aws_cloudfront_cache_policy.caching_disabled.id
-  }
-
-  restrictions {
-    geo_restriction {
-      restriction_type = "none"
-    }
-  }
-
-  viewer_certificate {
-    acm_certificate_arn      = aws_acm_certificate_validation.cert.certificate_arn
-    ssl_support_method       = "sni-only"
-    minimum_protocol_version = "TLSv1.2_2021"
-  }
-}
-
-resource "aws_cloudfront_distribution" "www_redirect" {
-  origin {
-    domain_name = aws_s3_bucket_website_configuration.site.website_endpoint
-    origin_id   = "www.monvillarin.com.s3.us-east-1.amazonaws.com"
-    custom_origin_config {
-      http_port              = 80
-      https_port             = 443
-      origin_protocol_policy = "http-only"
-      origin_ssl_protocols   = ["TLSv1.2"]
-    }
-  }
-
-  enabled         = true
-  is_ipv6_enabled = true
-  http_version    = "http2"
-  price_class     = "PriceClass_100"
-
-  aliases = ["www.monvillarin.com"]
-
-  default_cache_behavior {
-    allowed_methods        = ["GET", "HEAD"]
-    cached_methods         = ["GET", "HEAD"]
-    target_origin_id       = "www.monvillarin.com.s3.us-east-1.amazonaws.com"
     viewer_protocol_policy = "redirect-to-https"
     compress               = true
     cache_policy_id        = data.aws_cloudfront_cache_policy.caching_disabled.id
@@ -228,6 +187,8 @@ resource "aws_cloudfront_distribution" "www_redirect" {
   }
 }
 
+
+
 # Route 53 Records
 resource "aws_route53_record" "root_a" {
   zone_id = aws_route53_zone.primary.zone_id
@@ -247,8 +208,8 @@ resource "aws_route53_record" "www_a" {
   type    = "A"
 
   alias {
-    name                   = aws_cloudfront_distribution.www_redirect.domain_name
-    zone_id                = aws_cloudfront_distribution.www_redirect.hosted_zone_id
+    name                   = aws_cloudfront_distribution.s3_distribution.domain_name
+    zone_id                = aws_cloudfront_distribution.s3_distribution.hosted_zone_id
     evaluate_target_health = false
   }
 }
