@@ -6,6 +6,12 @@ terraform {
       version = ">= 5.0"
     }
   }
+  backend "s3" {
+    bucket         = "tf-state-store-121485"
+    key            = "cloud-resume-challenge-site-counter/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "tf-state-lock-121485"
+  }
 }
 
 provider "aws" {

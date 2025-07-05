@@ -7,10 +7,10 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "terraform-state-bucket-abc1"
-    key            = "recipe-sharing-app/terraform.tfstate"
+    bucket         = "tf-state-store-121485"
+    key            = "cloud-resume-challenge-frontend/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "terraform-up-and-running-locks"
+    dynamodb_table = "tf-state-lock-121485"
   }
 }
 
