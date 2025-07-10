@@ -33,11 +33,9 @@ Ensure the following tools are installed before deploying this project:
 - Configure AWS credentials by running this command: `aws configure`
 
 ## 📁 Project Structure
-<pre>
-  <code>
+<pre><code>
 │── frontend                # Static site files
 │── backend_codes           # Application logic (lambda_function.py) Site counter (counter_app.js)
 │── IaC                     # Terraform configuration files
 │── README.md               # Documentation
-  </code>
-  </pre>
+  </code></pre>
