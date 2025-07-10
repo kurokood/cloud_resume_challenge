@@ -10,3 +10,16 @@ NOTE: I provisioned the entire infrastructure using Infrastructure as Code (IaC)
 
 You can use the information and instructions below to replicate this project and gain hands-on experience with core Terraform and AWS concepts.
 Happy learning! ☁️
+
+## The Architecture
+[](https://github.com/kurokood/cloud_resume_challenge/blob/master/cloud-resume-challenge.png)
+
+## Prerequisites
+Ensure the following tools are installed before deploying this project:
+
+## 1. Install Terraform
+-
+
+## 2. 
+
+## 3. Configure AWS CLI
