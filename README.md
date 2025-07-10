@@ -32,9 +32,12 @@ Ensure the following tools are installed before deploying this project:
 - Install AWS CLI from the official site: [](https://aws.amazon.com/cli/)
 - Configure AWS credentials by running this command: `aws configure`
 
-## Project Structure
-`terraform-aws-autoscaling-alb/
+## 📁 Project Structure
+<pre>
+  <code>
 │── frontend                # Static site files
 │── backend_codes           # Application logic (lambda_function.py) Site counter (counter_app.js)
 │── IaC                     # Terraform configuration files
-│── README.md               # Documentation`
+│── README.md               # Documentation
+  </code>
+  </pre>
