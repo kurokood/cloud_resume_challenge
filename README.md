@@ -17,14 +17,14 @@ Happy learning! ☁️
 ![](https://github.com/kurokood/cloud_resume_challenge/blob/master/cloud-resume-challenge.png)
 
 ## Components
-| Feature               | Description                                                                 |
-|------------------------|-----------------------------------------------------------------------------|
-| Route 53       | Static resume site hosted on AWS S3 with CloudFront CDN                    |
-| CloudFront          | Managed with Route 53 and secured with HTTPS                               |
-| S3        | Implemented with API Gateway, Lambda (Python), and DynamoDB                |
-| API Gateway | Entire AWS setup managed using Terraform                                   |
-| Lambda Function        | Automated deployments via GitHub Actions                                   |
-| DynamoDB Table       | Automated deployments via GitHub Actions                                   |
+| Feature           | Description                                                             |
+|------------------|-------------------------------------------------------------------------|
+| Route 53         | Configured a custom domain for the resume site                          |
+| CloudFront       | Serves static content from S3 through a global CDN                      |
+| S3               | Hosts the static files for the resume website                           |
+| API Gateway      | Exposes a public API endpoint that routes requests to the Lambda function |
+| Lambda Function  | Handles the application logic for processing visitor count              |
+| DynamoDB Table   | Stores the website's visitor count data                                 |
 
 ## Key Takeaways:
 This project serves as a solid foundation for gaining hands-on experience with serverless computing and AWS services. Below is a detailed overview of the key takeaways:
