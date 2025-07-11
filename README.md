@@ -34,3 +34,10 @@ This project serves as a solid foundation for gaining hands-on experience with s
 - Applied Infrastructure as Code (IaC) using Terraform to manage and provision AWS resources efficiently.
 - Integrated CI/CD workflows with GitHub Actions to automate testing and deployments.
 - Strengthened understanding of cloud architecture, automation, and scalability principles.
+
+###  Author: Mon Villarin
+ 📌 Portfolio Site: [Mon Villarin](https://monvillarin.com)  
+ 📌 Blog Post: [From Resume to the Cloud: How I Built and Deployed My Cloud Resume Challenge](https://blog.monvillarin.com/from-resume-to-the-cloud-how-i-built-and-deployed-my-cloud-resume-challenge)
+
+
+
