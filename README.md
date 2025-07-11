@@ -16,8 +16,8 @@ Happy learning! ☁️
 
 ![](https://github.com/kurokood/cloud_resume_challenge/blob/master/cloud-resume-challenge.png)
 
-## Components
-| Feature           | Description                                                             |
+## Architectural Components
+| Components           | Description                                                             |
 |------------------|-------------------------------------------------------------------------|
 | Route 53         | Configured a custom domain for the resume site                          |
 | CloudFront       | Serves static content from S3 through a global CDN                      |
