@@ -1,499 +1,762 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <title>Ramon Villarin | Cloud Engineer - DevOps - SRE</title>
-    <meta charset="utf-8" />
-    <meta name="description" content="Intelligent automation. Seamless deployments. Rock-solid cloud infrastructure.">
-    <meta name="author" content="Mon Villarin">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
-  </head>
-  <body class="is-preload">
-    
-    <!-- Navigation -->
-    <nav id="nav">
-      <ul class="container">
-        <li><a href="#top">About</a></li>
-        <li><a href="#timeline">Timeline</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
 
-    <!-- Hero Section -->
-    <article id="top" class="wrapper style1">
-      <div class="container">
-        <div class="row">
-          <div class="col-4 col-5-large col-12-medium">
-            <img src="images/profile.jpg" alt="profile" class="profile-pic" />
-          </div>
-          <div class="col-8 col-7-large col-12-medium">
-            <header>
-              <h1>Hi. I'm <strong>Mon Villarin</strong></h1>
-            </header>
-            <p>[Cloud Engineer] -X- [DevOps] -X- [SRE]</p>
-            <ul class="social center-icons">
-              <li>
-                <a href="https://www.linkedin.com/in/ramon-villarin/" class="icon brands fa-linkedin-in" target="_blank">
-                  <span class="label">LinkedIn</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/kurokood" class="icon brands fa-github" target="_blank">
-                  <span class="label">Github</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://blog.monvillarin.com/" class="icon brands fa-blogger" target="_blank">
-                  <span class="label">Blogger</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://drive.google.com/file/d/1JdKP9AS9mtIzSM_FANusvbsR3Jbi5txC/view?usp=sharing" class="fas fa-file-alt" target="_blank">
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </article>
+<head>
+  <title>Ramon Villarin | Cloud Engineer - DevOps - SRE</title>
+  <meta charset="utf-8" />
+  <meta name="description" content="Intelligent automation. Seamless deployments. Rock-solid cloud infrastructure.">
+  <meta name="author" content="Mon Villarin">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" href="images/favicon.png" type="image/x-icon" />
 
-    <!-- Introduction -->
-    <div class="container" style="margin-top: -1.5em; margin-bottom: 6em;">
-      <p>
-        Hi I am Ramon "Mon" Villarin, a Cloud Engineer/Architect with a strong passion for cloud computing,
-        automation, and security. After taking a career break, I have been actively learning and building
-        expertise in cloud infrastructure, automation, and security best practices.
-      </p>
-      <p>
-        I am proficient in Python, AWS services, Infrastructure as Code, and a bit of CI/CD pipelines.
-        Currently, I am expanding my expertise into AI infrastructure and machine learning tools to deepen
-        my understanding of next-generation cloud technologies. My goal is to design and maintain scalable,
-        secure, and highly available cloud environments while automating deployments and improving system
-        performance.
-      </p>
-      <p>
-        I'm a certified AWS Solutions Architect Associate, CompTIA Security+ professional, and HashiCorp
-        Terraform Associate.
-      </p>
-    </div>
+  <!-- Mobile Responsive Styles for Blog Posts -->
+  <style>
+    /* Mobile styles for blog posts */
+    @media screen and (max-width: 768px) {
+      .blog-post article.box {
+        flex-direction: column !important;
+        align-items: center !important;
+      }
 
-    <!-- Focus Areas -->
-<article id="work" class="wrapper style2">
-  <div class="container">
-    <header>
-      <h2>&lt;My Focus Areas/&gt;</h2>
-      <p>Key areas of expertise for tech innovation.</p>
-    </header>
-    <div class="row aln-center">
-      <div class="col-4 col-6-medium col-12-small">
-        <section class="box style1" style="border-radius: 16px; background: white; padding: 1.5em;">
-          <img src="images/cloud_computing.svg" alt="Cloud Engineer" width="70" height="70" />
-          <h3>Cloud Engineer</h3>
-          <p>Design, deploy, manage, and optimize cloud infrastructure and services for efficiency, scalability, and security.</p>
-        </section>
-      </div>
-      <div class="col-4 col-6-medium col-12-small">
-        <section class="box style1" style="border-radius: 16px; background: white; padding: 1.5em;">
-          <img src="images/devops.svg" alt="DevOps" width="70" height="70" />
-          <h3>DevOps</h3>
-          <p>Automate, optimize, and manage cloud infrastructure, bridging development and operations with CI/CD and IaC.</p>
-        </section>
-      </div>
-      <div class="col-4 col-6-medium col-12-small">
-        <section class="box style1" style="border-radius: 16px; background: white; padding: 1.5em;">
-          <img src="images/sre.png" alt="SRE" width="70" height="70" />
-          <h3>SRE</h3>
-          <p>Ensure reliability, scalability, and performance of cloud systems by integrating software engineering principles into operations.</p>
-        </section>
-      </div>
-    </div>
-    <footer>
-      <a href="#timeline" class="button large scrolly">My Milestone</a>
-    </footer>
-  </div>
-</article>
+      .blog-post .blog-image-container {
+        flex: none !important;
+        margin-right: 0 !important;
+        margin-bottom: 1em !important;
+        width: 100% !important;
+        max-width: 400px !important;
+      }
 
-<!-- Timeline Section -->
-<article id="timeline" class="wrapper resume-style">
-  <div class="container">
-    <header style="text-align: center;">
-      <h2>&lt;Timeline/&gt;</h2>
-      <p>Certifications, training, and academic milestones.</p>
-    </header>
+      .blog-post .blog-content-container {
+        flex: none !important;
+        width: 100% !important;
+        max-width: 400px !important;
+        margin: 0 auto !important;
+      }
 
-    <div class="columns">
-      <!-- Left Column -->
-      <div class="column-left">
-        <div class="timeline">
-          <div class="resume-container-title">
-            <img src="images/trophy.png" />
-            <h2>Certificates and Professional Development</h2>
-          </div>
+      .blog-post h3 {
+        text-align: left !important;
+        margin-bottom: 0.5em !important;
+      }
 
-          <div class="resume-container">
-            <img src="images/hashicorp_logo.jpg" />
-            <div class="text-box">
-              <h3 class="section-title">Hashicorp Certified Terraform - Associate</h3>
-              <p>
-                <a href="https://www.credly.com/badges/d30978e3-8b70-4ebb-8ee5-6a4340e5b8f1/public_url" target="_blank">
-                  <img src="images/terraform_cert.png" class="badge-img" alt="terraform badge" />
-                </a>
-                Achieved the HashiCorp Certified: Terraform Associate certification, validating expertise in infrastructure as code, core Terraform concepts, and best practices for provisioning and managing cloud infrastructure.
-              </p>
-            </div>
-          </div>
+      .blog-post p {
+        text-align: left !important;
+      }
 
-          <div class="resume-container">
-            <img src="images/aws_logo.jpg" />
-            <div class="text-box">
-              <h3 class="section-title">AWS Certified Solutions Architect - Associate</h3>
-              <a href="https://www.credly.com/badges/48af8993-7186-491c-98ef-3440f28eccff" target="_blank">
-                <img src="images/aws_sa_assoc_cert.png" class="badge-img" alt="terraform badge" />
-              </a>
-              <p>Earned the AWS Certified Solutions Architect – Associate certification, demonstrating the ability to design and deploy scalable, highly available, and cost-effective systems on AWS aligned with architectural best practices.</p>
-            </div>
-          </div>
+      /* Mobile pagination styles */
+      .row[style*="margin-top: 2em"] {
+        margin-top: 1em !important;
+      }
 
-          <div class="resume-container">
-            <img src="images/aws_logo.jpg" />
-            <div class="text-box">
-              <h3 class="section-title">AWS Certified Cloud Practitioner</h3>
-              <a href="https://www.credly.com/badges/40cdcee9-6255-4d1a-a8be-03f2f7484002/public_url" target="_blank">
-                <img src="images/aws_cp_cert.png" class="badge-img" alt="terraform badge" />
-              </a>
-              <p>Attained the AWS Certified Cloud Practitioner certification, validating foundational knowledge of AWS cloud concepts, core services, security, architecture, pricing, and support.</p>
-            </div>
-          </div>
+      #pagination-controls {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.8em !important;
+      }
 
-          <div class="resume-container">
-            <img src="images/digitalcloudtraining_logo.jpg" />
-            <div class="text-box">
-              <h3 class="section-title">Python Programming for AWS</h3>
-              <a href="https://drive.google.com/file/d/1P6L7vtOoKuH0abvuPKWoj0QnolFRDTXY/view" target="_blank">
-                <img src="images/digitalcloudtraining_python.png" class="badge-img" alt="terraform badge" />
-              </a>
-              <p>Completed Python Programming for AWS with Boto3 from Digital Cloud Training, gaining practical experience in automating AWS services using Python and the Boto3 SDK.</p>
-            </div>
-          </div>
+      #page-info {
+        font-size: 0.9em !important;
+        margin: 0 !important;
+        order: -1 !important;
+        text-align: center !important;
+      }
 
-          <div class="resume-container">
-            <img src="images/comptia_logo.jpg" />
-            <div class="text-box">
-              <h3 class="section-title">CompTIA Security+</h3>
-              <a href="https://www.credly.com/badges/280beb67-e881-4885-910b-8e2da76dcdb4" target="_blank">
-                <img src="images/comptia_secplus.png" class="badge-img" alt="terraform badge" />
-              </a>
-              <p>Earned the CompTIA Security+ certification, demonstrating validated knowledge in core cybersecurity principles, risk management, network security, and incident response in accordance with industry best practices.</p>
-            </div>
-          </div>
+      .pagination-buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 0.8em !important;
+        justify-content: center !important;
+      }
 
-          <div class="resume-container">
-            <img src="images/coursera_logo.jpg" />
-            <div class="text-box">
-              <h3 class="section-title">Google Cybersecurity Professional</h3>
-              <a href="https://www.credly.com/badges/198dff22-aa3e-4dff-86f7-6cafe5f26a01/" target="_blank">
-                <img src="images/google_cybersec.png" class="badge-img" alt="terraform badge" />
-              </a>
-              <p>Completed the Google Cybersecurity Professional Certificate on Coursera, developing hands-on skills in security operations, network defense, incident response, threat management, and cybersecurity tools aligned with industry standards.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Column -->
-      <div class="column-right">
-        <!-- Experience Section -->
-        <div class="timeline">
-          <div class="resume-container-title">
-            <img src="images/briefcase.png" />
-            <h2>Experience</h2>
-          </div>
-
-          <div class="resume-container">
-            <img src="images/network_server.png" />
-            <div class="text-box">
-              <h3 class="section-title">Founder and Full-Stack Administrator</h3>
-              <small>
-                <i>Self-Employed | Media Hosting & Content Delivery Platform</i><br>
-                2009 - 2021
-              </small>
-              <ul>
-                <li>Built and operated a high-traffic streaming platform over 12 years, handling both front-end and back-end development and infrastructure.</li>
-                <li>Utilized WordPress CMS with customized themes for content management and improved user experience.</li>
-                <li>Deployed and maintained two dedicated servers: one for the website (running LiteSpeed) and another as a video streaming server (Nginx).</li>
-                <li>Handled full server lifecycle: from OS-level configuration, web server tuning, to network management and security hardening.</li>
-                <li>Transcoded media files into streamable formats ensuring compatibility across devices and browsers.</li>
-                <li>Set up Grafana and Prometheus for real-time monitoring of server health, traffic, and performance metrics.</li>
-                <li>Successfully monetized the platform through multiple advertising networks, generating sustained revenue over the operational period.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Education Section -->
-        <div class="timeline-education">
-          <div class="resume-container-title">
-            <img src="images/mortarboard.png" />
-            <h2>Education</h2>
-          </div>
-
-          <div class="resume-container">
-            <img src="images/ue.jpg" />
-            <div class="text-box">
-              <h3 class="section-title">University of the East</h3>
-              <small>2007 - 2009</small>
-              <p>
-                Bachelor of Science in Information Technology<br />
-                Manila, Philippines.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer style="display: flex; justify-content: center;">
-      <a href="#skills" class="button large scrolly">My Skill Sets</a>
-    </footer>
-  </div>
-</article>
-
-<!-- Skills -->
-<article id="skills" class="wrapper style2">
-  <div class="container">
-    <header>
-      <h2>&lt;Skills/&gt;</h2>
-      <p>Skills that bring cloud automation efficiency and scalability.</p>
-    </header>
-
-    <div class="row gtr-50">
-      <div class="col-6 col-12-medium">
-
-        <div class="progress-skill">
-          <div class="progress-header">
-            <span class="label">Amazon Web Services</span>
-            <span class="val">72%</span>
-          </div>
-          <div class="bar-wrap">
-            <div class="bar" style="width: 72%;"></div>
-          </div>
-        </div>
-
-        <div class="progress-skill">
-          <div class="progress-header">
-            <span class="label">Terraform (IaC)</span>
-            <span class="val">69%</span>
-          </div>
-          <div class="bar-wrap">
-            <div class="bar" style="width: 69%;"></div>
-          </div>
-        </div>
-
-        <div class="progress-skill">
-          <div class="progress-header">
-            <span class="label">Git</span>
-            <span class="val">52</span>
-          </div>
-          <div class="bar-wrap">
-            <div class="bar" style="width: 52%;"></div>
-          </div>
-        </div>
-
-        <div class="progress-skill">
-          <div class="progress-header">
-            <span class="label">GitHub Actions (CI/CD)</span>
-            <span class="val">48%</span>
-          </div>
-          <div class="bar-wrap">
-            <div class="bar" style="width: 48%;"></div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="col-6 col-12-medium">
-
-        <div class="progress-skill">
-          <div class="progress-header">
-            <span class="label">Python</span>
-            <span class="val">29%</span>
-          </div>
-          <div class="bar-wrap">
-            <div class="bar" style="width: 29%;"></div>
-          </div>
-        </div>
-
-        <div class="progress-skill">
-          <div class="progress-header">
-            <span class="label">Linux Environment</span>
-            <span class="val">71%</span>
-          </div>
-          <div class="bar-wrap">
-            <div class="bar" style="width: 71%;"></div>
-          </div>
-        </div>
-
-        <div class="progress-skill">
-          <div class="progress-header">
-            <span class="label">Bash CLI</span>
-            <span class="val">68%</span>
-          </div>
-          <div class="bar-wrap">
-            <div class="bar" style="width: 68%;"></div>
-          </div>
-        </div>
-
-        <div class="progress-skill">
-          <div class="progress-header">
-            <span class="label">PowerShell</span>
-            <span class="val">48%</span>
-          </div>
-          <div class="bar-wrap">
-            <div class="bar" style="width: 48%;"></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <a href="#portfolio" class="button large scrolly">My Recent Work</a>
-  </footer>
-</article>
-
-<!-- Portfolio -->
-<article id="portfolio" class="wrapper style3">
-  <div class="container">
-    <header>
-      <h2>&lt;Portfolio/&gt;</h2>
-      <p>Collection of practical projects in cloud infrastructure, automation, and full-stack development.</p>
-    </header>
-    <div class="row">
-      <div class="col-4 col-6-medium col-12-small">
-        <article class="box style2">
-          <a href="https://blog.monvillarin.com/a-business-intelligence-pipeline-that-transforms-clickstream-into-insights" class="image featured"><img src="images/business-intelligence.app.png" alt="" /></a>
-          <h3><a href="https://blog.monvillarin.com/a-business-intelligence-pipeline-that-transforms-clickstream-into-insights">A Business Intelligence Pipeline That Transforms Clickstream Into Insights</a></h3>
-          <p>Harness the power of AWS serverless architecture to transform raw clickstream data into actionable BI insights. Discover how API Gateway, Lambda, Glue, Athena, and QuickSight come together in an end‑to‑end pipeline—from ingestion to visualization—to help teams scale faster and reduce infrastructure overhead.</p>
-        </article>
-      </div>
-      <div class="col-4 col-6-medium col-12-small">
-        <article class="box style2">
-          <a href="https://blog.monvillarin.com/ai-powered-meeting-management-chatbot-with-amazon-lex-v2" class="image featured"><img src="images/chatbot-with-amazon-lex.png" alt="" /></a>
-          <h3><a href="https://blog.monvillarin.com/ai-powered-meeting-management-chatbot-with-amazon-lex-v2">AI-Powered Meeting Management Chatbot with Amazon Lex V2</a></h3>
-          <p>Meety is a new way to manage meetings — users can schedule via natural language conversations, while admins stay in control through a dedicated web interface.
-            Built entirely on AWS serverless technologies, it shows how modern cloud services can deliver intuitive, scalable, and cost‑effective solutions for everyday business needs.</p>
-        </article>
-      </div>
-            <div class="col-4 col-6-medium col-12-small">
-        <article class="box style2">
-          <a href="https://blog.monvillarin.com/serverless-recipe-sharing-app-with-aws-cognito-and-terraform" class="image featured"><img src="images/recipe-sharing-app.png" alt="" /></a>
-          <h3><a href="https://blog.monvillarin.com/serverless-recipe-sharing-app-with-aws-cognito-and-terraform">Serverless Recipe Sharing App with AWS Cognito and Terraform</a></h3>
-          <p>Discover a smarter way to manage your favorite recipes—securely and effortlessly in the cloud. The Secure Serverless Recipe sharing App delivers lightning‑fast performance, strong user authentication, and seamless access from anywhere. Powered by AWS and automated with Terraform, it’s built to scale as your recipe collection grows while keeping your data safe and your experience smooth.</p>
-        </article>
-      </div>
-      <div class="col-4 col-6-medium col-12-small">
-        <article class="box style2">
-          <a href="https://blog.monvillarin.com/from-resume-to-the-cloud-how-i-built-and-deployed-my-cloud-resume-challenge" class="image featured"><img src="images/cloud-resume-challenege.png" alt="" /></a>
-          <h3><a href="https://blog.monvillarin.com/from-resume-to-the-cloud-how-i-built-and-deployed-my-cloud-resume-challenge">From Resume to the Cloud: How I Built and Deployed My Cloud Resume Challenge</a></h3>
-          <p>A hands-on journey of building and deploying a cloud-native resume website using AWS, serverless technologies, and Infrastructure as Code.</p>
-        </article>
-      </div>
-    </div>
-    <footer>
-      <a href="#contact" class="button large scrolly">Get In Touch</a>
-    </footer>
-  </div>
-</article>
-
-<!-- Contact -->
-<article id="contact" class="wrapper style4">
-  <div class="container medium">
-    <header>
-      <h2>Let's open up the cloud.</h2>
-      <p>Reach out via the contact form below. P.S. no XSS pls. :)</p>
-    </header>
-
-    <div class="row">
-      <div class="col-12">
-        <form method="post" action="https://formspree.io/f/xldnolnk">
-          <div class="row">
-            <div class="col-6 col-12-small">
-              <input type="text" name="name" id="name" placeholder="Name" />
-            </div>
-            <div class="col-6 col-12-small">
-              <input type="text" name="email" id="email" placeholder="Email" />
-            </div>
-            <div class="col-12">
-              <input type="text" name="subject" id="subject" placeholder="Subject" />
-            </div>
-            <div class="col-12">
-              <textarea name="message" id="message" placeholder="Message"></textarea>
-            </div>
-            <div class="col-12">
-              <ul class="actions">
-                <li><input type="submit" value="Send Message" /></li>
-                <li><input type="reset" value="Clear Form" class="alt" /></li>
-              </ul>
-            </div>
-          </div>
-        </form>
-      </div>
-
-      <div class="col-12">
-        <hr />
-        <h3>Find me on ...</h3>
-        <ul class="social">
-          <li><a href="https://www.linkedin.com/in/ramon-villarin/" class="icon brands fa-linkedin-in" target="_blank"><span class="label">LinkedIn</span></a></li>
-          <li><a href="https://github.com/kurokood" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
-          <li><a href="https://blog.monvillarin.com/" class="icon brands fa-blogger" target="_blank"><span class="label">Blogger</span></a></li>
-        </ul>
-
-        <br />
-        <div id="visitor-count">
-          You are visitor number:<br />
-          <span id="visitor-number">Loading...</span>
-        </div>
-
-<script>
-  async function updateVisitorCount() {
-    try {
-      const response = await fetch('https://ckl3yj2h06.execute-api.us-east-1.amazonaws.com/VisitorCounter');
-      const data = await response.json();
-      document.getElementById('visitor-number').textContent = data.total_unique_visits;
-    } catch (error) {
-      console.error('Error fetching visitor count:', error);
-      document.getElementById('visitor-number').textContent = 'Error';
+      #pagination-controls button {
+        font-size: 0.8em !important;
+        padding: 0.5em 1em !important;
+        min-width: 80px !important;
+        max-width: 100px !important;
+        margin: 0 !important;
+        white-space: nowrap !important;
+        flex: 0 0 auto !important;
+      }
     }
-  }
 
-  updateVisitorCount();
-</script>
+    /* Desktop pagination styles */
+    @media screen and (min-width: 769px) {
+      #pagination-controls button {
+        margin-right: 1em !important;
+        margin-left: 1em !important;
+      }
 
+      #page-info {
+        margin: 0 1em !important;
+      }
+    }
+  </style>
+</head>
 
-        <hr />
+<body class="is-preload">
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <ul class="container">
+      <li><a href="#top">About</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <article id="top" class="wrapper style1">
+    <div class="container">
+      <div class="row">
+        <div class="col-4 col-5-large col-12-medium">
+          <img src="images/profile.jpg" alt="profile" class="profile-pic" />
+        </div>
+        <div class="col-8 col-7-large col-12-medium">
+          <header>
+            <h1>Hi. I'm <strong>Mon Villarin</strong></h1>
+          </header>
+          <p>[Cloud Engineer] -X- [DevOps] -X- [SRE]</p>
+          <ul class="social center-icons">
+            <li>
+              <a href="https://www.linkedin.com/in/ramon-villarin/" class="icon brands fa-linkedin-in" target="_blank">
+                <span class="label">LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/kurokood" class="icon brands fa-github" target="_blank">
+                <span class="label">Github</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://blog.monvillarin.com/" class="icon brands fa-blogger" target="_blank">
+                <span class="label">Blogger</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://drive.google.com/file/d/1JdKP9AS9mtIzSM_FANusvbsR3Jbi5txC/view?usp=sharing"
+                class="fas fa-file-alt" target="_blank">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Introduction -->
+  <div class="container" style="margin-top: -1.5em; margin-bottom: 6em;">
+    <p>
+      Hi I am Ramon "Mon" Villarin, a Cloud Engineer/Architect with a strong passion for cloud computing,
+      automation, and security. After taking a career break, I have been actively learning and building
+      expertise in cloud infrastructure, automation, and security best practices.
+    </p>
+    <p>
+      I am proficient in Python, AWS services, Infrastructure as Code, and a bit of CI/CD pipelines.
+      Currently, I am expanding my expertise into AI infrastructure and machine learning tools to deepen
+      my understanding of next-generation cloud technologies. My goal is to design and maintain scalable,
+      secure, and highly available cloud environments while automating deployments and improving system
+      performance.
+    </p>
+    <p>
+      I'm a certified AWS Solutions Architect Associate, CompTIA Security+ professional, and HashiCorp
+      Terraform Associate.
+    </p>
+  </div>
+
+  <!-- Focus Areas -->
+  <article id="work" class="wrapper style2">
+    <div class="container">
+      <header>
+        <h2>&lt;My Focus Areas/&gt;</h2>
+        <p>Key areas of expertise for tech innovation.</p>
+      </header>
+      <div class="row aln-center">
+        <div class="col-4 col-6-medium col-12-small">
+          <section class="box style1" style="border-radius: 16px; background: white; padding: 1.5em;">
+            <img src="images/cloud_computing.svg" alt="Cloud Engineer" width="70" height="70" />
+            <h3>Cloud Engineer</h3>
+            <p>Design, deploy, manage, and optimize cloud infrastructure and services for efficiency, scalability, and
+              security.</p>
+          </section>
+        </div>
+        <div class="col-4 col-6-medium col-12-small">
+          <section class="box style1" style="border-radius: 16px; background: white; padding: 1.5em;">
+            <img src="images/devops.svg" alt="DevOps" width="70" height="70" />
+            <h3>DevOps</h3>
+            <p>Automate, optimize, and manage cloud infrastructure, bridging development and operations with CI/CD and
+              IaC.</p>
+          </section>
+        </div>
+        <div class="col-4 col-6-medium col-12-small">
+          <section class="box style1" style="border-radius: 16px; background: white; padding: 1.5em;">
+            <img src="images/sre.png" alt="SRE" width="70" height="70" />
+            <h3>SRE</h3>
+            <p>Ensure reliability, scalability, and performance of cloud systems by integrating software engineering
+              principles into operations.</p>
+          </section>
+        </div>
+      </div>
+      <footer>
+        <a href="#timeline" class="button large scrolly">My Milestone</a>
+      </footer>
+    </div>
+  </article>
+
+  <!-- Timeline Section -->
+  <article id="timeline" class="wrapper resume-style">
+    <div class="container">
+      <header style="text-align: center;">
+        <h2>&lt;Timeline/&gt;</h2>
+        <p>Certifications, training, and academic milestones.</p>
+      </header>
+
+      <div class="columns">
+        <!-- Left Column -->
+        <div class="column-left">
+          <div class="timeline">
+            <div class="resume-container-title">
+              <img src="images/trophy.png" />
+              <h2>Certificates and Professional Development</h2>
+            </div>
+
+            <div class="resume-container">
+              <img src="images/hashicorp_logo.jpg" />
+              <div class="text-box">
+                <h3 class="section-title">Hashicorp Certified Terraform - Associate</h3>
+                <p>
+                  <a href="https://www.credly.com/badges/d30978e3-8b70-4ebb-8ee5-6a4340e5b8f1/public_url"
+                    target="_blank">
+                    <img src="images/terraform_cert.png" class="badge-img" alt="terraform badge" />
+                  </a>
+                  Achieved the HashiCorp Certified: Terraform Associate certification, validating expertise in
+                  infrastructure as code, core Terraform concepts, and best practices for provisioning and managing
+                  cloud infrastructure.
+                </p>
+              </div>
+            </div>
+
+            <div class="resume-container">
+              <img src="images/aws_logo.jpg" />
+              <div class="text-box">
+                <h3 class="section-title">AWS Certified Solutions Architect - Associate</h3>
+                <a href="https://www.credly.com/badges/48af8993-7186-491c-98ef-3440f28eccff" target="_blank">
+                  <img src="images/aws_sa_assoc_cert.png" class="badge-img" alt="terraform badge" />
+                </a>
+                <p>Earned the AWS Certified Solutions Architect – Associate certification, demonstrating the ability to
+                  design and deploy scalable, highly available, and cost-effective systems on AWS aligned with
+                  architectural best practices.</p>
+              </div>
+            </div>
+
+            <div class="resume-container">
+              <img src="images/aws_logo.jpg" />
+              <div class="text-box">
+                <h3 class="section-title">AWS Certified Cloud Practitioner</h3>
+                <a href="https://www.credly.com/badges/40cdcee9-6255-4d1a-a8be-03f2f7484002/public_url" target="_blank">
+                  <img src="images/aws_cp_cert.png" class="badge-img" alt="terraform badge" />
+                </a>
+                <p>Attained the AWS Certified Cloud Practitioner certification, validating foundational knowledge of AWS
+                  cloud concepts, core services, security, architecture, pricing, and support.</p>
+              </div>
+            </div>
+
+            <div class="resume-container">
+              <img src="images/digitalcloudtraining_logo.jpg" />
+              <div class="text-box">
+                <h3 class="section-title">Python Programming for AWS</h3>
+                <a href="https://drive.google.com/file/d/1P6L7vtOoKuH0abvuPKWoj0QnolFRDTXY/view" target="_blank">
+                  <img src="images/digitalcloudtraining_python.png" class="badge-img" alt="terraform badge" />
+                </a>
+                <p>Completed Python Programming for AWS with Boto3 from Digital Cloud Training, gaining practical
+                  experience in automating AWS services using Python and the Boto3 SDK.</p>
+              </div>
+            </div>
+
+            <div class="resume-container">
+              <img src="images/comptia_logo.jpg" />
+              <div class="text-box">
+                <h3 class="section-title">CompTIA Security+</h3>
+                <a href="https://www.credly.com/badges/280beb67-e881-4885-910b-8e2da76dcdb4" target="_blank">
+                  <img src="images/comptia_secplus.png" class="badge-img" alt="terraform badge" />
+                </a>
+                <p>Earned the CompTIA Security+ certification, demonstrating validated knowledge in core cybersecurity
+                  principles, risk management, network security, and incident response in accordance with industry best
+                  practices.</p>
+              </div>
+            </div>
+
+            <div class="resume-container">
+              <img src="images/coursera_logo.jpg" />
+              <div class="text-box">
+                <h3 class="section-title">Google Cybersecurity Professional</h3>
+                <a href="https://www.credly.com/badges/198dff22-aa3e-4dff-86f7-6cafe5f26a01/" target="_blank">
+                  <img src="images/google_cybersec.png" class="badge-img" alt="terraform badge" />
+                </a>
+                <p>Completed the Google Cybersecurity Professional Certificate on Coursera, developing hands-on skills
+                  in security operations, network defense, incident response, threat management, and cybersecurity tools
+                  aligned with industry standards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column-right">
+          <!-- Experience Section -->
+          <div class="timeline">
+            <div class="resume-container-title">
+              <img src="images/briefcase.png" />
+              <h2>Experience</h2>
+            </div>
+
+            <div class="resume-container">
+              <img src="images/network_server.png" />
+              <div class="text-box">
+                <h3 class="section-title">Founder and Full-Stack Administrator</h3>
+                <small>
+                  <i>Self-Employed | Media Hosting & Content Delivery Platform</i><br>
+                  2009 - 2021
+                </small>
+                <ul>
+                  <li>Built and operated a high-traffic streaming platform over 12 years, handling both front-end and
+                    back-end development and infrastructure.</li>
+                  <li>Utilized WordPress CMS with customized themes for content management and improved user experience.
+                  </li>
+                  <li>Deployed and maintained two dedicated servers: one for the website (running LiteSpeed) and another
+                    as a video streaming server (Nginx).</li>
+                  <li>Handled full server lifecycle: from OS-level configuration, web server tuning, to network
+                    management and security hardening.</li>
+                  <li>Transcoded media files into streamable formats ensuring compatibility across devices and browsers.
+                  </li>
+                  <li>Set up Grafana and Prometheus for real-time monitoring of server health, traffic, and performance
+                    metrics.</li>
+                  <li>Successfully monetized the platform through multiple advertising networks, generating sustained
+                    revenue over the operational period.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Section -->
+          <div class="timeline-education">
+            <div class="resume-container-title">
+              <img src="images/mortarboard.png" />
+              <h2>Education</h2>
+            </div>
+
+            <div class="resume-container">
+              <img src="images/ue.jpg" />
+              <div class="text-box">
+                <h3 class="section-title">University of the East</h3>
+                <small>2007 - 2009</small>
+                <p>
+                  Bachelor of Science in Information Technology<br />
+                  Manila, Philippines.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer style="display: flex; justify-content: center;">
+        <a href="#skills" class="button large scrolly">My Skill Sets</a>
+      </footer>
+    </div>
+  </article>
+
+  <!-- Skills -->
+  <article id="skills" class="wrapper style2">
+    <div class="container">
+      <header>
+        <h2>&lt;Skills/&gt;</h2>
+        <p>Skills that bring cloud automation efficiency and scalability.</p>
+      </header>
+
+      <div class="row gtr-50">
+        <div class="col-6 col-12-medium">
+
+          <div class="progress-skill">
+            <div class="progress-header">
+              <span class="label">Amazon Web Services</span>
+              <span class="val">72%</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" style="width: 72%;"></div>
+            </div>
+          </div>
+
+          <div class="progress-skill">
+            <div class="progress-header">
+              <span class="label">Terraform (IaC)</span>
+              <span class="val">69%</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" style="width: 69%;"></div>
+            </div>
+          </div>
+
+          <div class="progress-skill">
+            <div class="progress-header">
+              <span class="label">Git</span>
+              <span class="val">52</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" style="width: 52%;"></div>
+            </div>
+          </div>
+
+          <div class="progress-skill">
+            <div class="progress-header">
+              <span class="label">GitHub Actions (CI/CD)</span>
+              <span class="val">48%</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" style="width: 48%;"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-6 col-12-medium">
+
+          <div class="progress-skill">
+            <div class="progress-header">
+              <span class="label">Python</span>
+              <span class="val">29%</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" style="width: 29%;"></div>
+            </div>
+          </div>
+
+          <div class="progress-skill">
+            <div class="progress-header">
+              <span class="label">Linux Environment</span>
+              <span class="val">71%</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" style="width: 71%;"></div>
+            </div>
+          </div>
+
+          <div class="progress-skill">
+            <div class="progress-header">
+              <span class="label">Bash CLI</span>
+              <span class="val">68%</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" style="width: 68%;"></div>
+            </div>
+          </div>
+
+          <div class="progress-skill">
+            <div class="progress-header">
+              <span class="label">PowerShell</span>
+              <span class="val">48%</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" style="width: 48%;"></div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
 
     <footer>
-      <ul id="copyright">
-        <li>&copy; Mon Villarin. All rights reserved.</li>
-        <li>Powered by: AWS</li>
-      </ul>
+      <a href="#portfolio" class="button large scrolly">My Recent Work</a>
     </footer>
-  </div>
-</article>
+  </article>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+  <!-- Portfolio -->
+  <article id="portfolio" class="wrapper style3">
+    <div class="container">
+      <header>
+        <h2>&lt;Portfolio/&gt;</h2>
+        <p>Collection of practical projects in cloud infrastructure, automation, and full-stack development.</p>
+      </header>
+      <div class="row" id="blog-posts-container">
+        <!-- Blog Post 1 -->
+        <div class="col-12 blog-post" data-page="1">
+          <article class="box style2"
+            style="display: flex; align-items: flex-start; padding-bottom: 0.5em; margin-bottom: 0.5em;">
+            <div class="blog-image-container" style="flex: 0 0 200px; margin-right: 1.5em;">
+              <a
+                href="https://blog.monvillarin.com/serverless-approach-with-aws-cicd-transforming-operations-and-reducing-costs">
+                <img src="images/2048-game-cicd-pipeline.png" alt=""
+                  style="width: 100%; height: auto; border-radius: 4px;" />
+              </a>
+            </div>
+            <div class="blog-content-container" style="flex: 1;">
+              <h3 style="text-align: left;"><a
+                  href="https://blog.monvillarin.com/serverless-approach-with-aws-cicd-transforming-operations-and-reducing-costs">A
+                  Serverless Approach with AWS CI/CD: Transforming Operations and Reducing Costs</a></h3>
+              <p style="text-align: left;">A serverless CI/CD pipeline on AWS streamlines deployments, reduces costs,
+                and eliminates downtime. Using a 2048 game case study, it highlights automation benefits, scalability,
+                and significant operational savings over traditional server-based deployment approaches.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="col-12 blog-post" data-page="1">
+          <article class="box style2"
+            style="display: flex; align-items: flex-start; padding-bottom: 0.5em; margin-bottom: 0.5em;">
+            <div class="blog-image-container" style="flex: 0 0 200px; margin-right: 1.5em;">
+              <a
+                href="https://blog.monvillarin.com/a-business-intelligence-pipeline-that-transforms-clickstream-into-insights">
+                <img src="images/business-intelligence.app.png" alt=""
+                  style="width: 100%; height: auto; border-radius: 4px;" />
+              </a>
+            </div>
+            <div class="blog-content-container" style="flex: 1;">
+              <h3 style="text-align: left;"><a
+                  href="https://blog.monvillarin.com/a-business-intelligence-pipeline-that-transforms-clickstream-into-insights">A
+                  Business Intelligence Pipeline That Transforms Clickstream Into Insights</a></h3>
+              <p style="text-align: left;">Leverage AWS serverless services to turn raw clickstream data into BI
+                insights. Learn how API Gateway, Lambda, Glue, Athena, and QuickSight form a complete pipeline—from
+                ingestion to visualization—enabling teams to scale quickly while minimizing infrastructure costs.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="col-12 blog-post" data-page="1">
+          <article class="box style2"
+            style="display: flex; align-items: flex-start; padding-bottom: 0.5em; margin-bottom: 0.5em;">
+            <div class="blog-image-container" style="flex: 0 0 200px; margin-right: 1.5em;">
+              <a href="https://blog.monvillarin.com/ai-powered-meeting-management-chatbot-with-amazon-lex-v2">
+                <img src="images/chatbot-with-amazon-lex.png" alt=""
+                  style="width: 100%; height: auto; border-radius: 4px;" />
+              </a>
+            </div>
+            <div class="blog-content-container" style="flex: 1;">
+              <h3 style="text-align: left;"><a
+                  href="https://blog.monvillarin.com/ai-powered-meeting-management-chatbot-with-amazon-lex-v2">AI-Powered
+                  Meeting Management Chatbot with Amazon Lex V2</a></h3>
+              <p style="text-align: left;">Meety is a new way to manage meetings — users can schedule via natural
+                language conversations, while admins stay in control through a dedicated web interface. Built entirely
+                on AWS serverless technologies, it shows how modern cloud services can deliver intuitive, scalable, and
+                cost‑effective solutions for everyday business needs.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Blog Post 4 -->
+        <div class="col-12 blog-post" data-page="2" style="display: none;">
+          <article class="box style2"
+            style="display: flex; align-items: flex-start; padding-bottom: 0.5em; margin-bottom: 0.5em;">
+            <div class="blog-image-container" style="flex: 0 0 200px; margin-right: 1.5em;">
+              <a href="https://blog.monvillarin.com/serverless-recipe-sharing-app-with-aws-cognito-and-terraform">
+                <img src="images/recipe-sharing-app.png" alt=""
+                  style="width: 100%; height: auto; border-radius: 4px;" />
+              </a>
+            </div>
+            <div class="blog-content-container" style="flex: 1;">
+              <h3 style="text-align: left;"><a
+                  href="https://blog.monvillarin.com/serverless-recipe-sharing-app-with-aws-cognito-and-terraform">Serverless
+                  Recipe Sharing App with AWS Cognito and Terraform</a></h3>
+              <p style="text-align: left;">Discover a smarter way to manage your favorite recipes—securely and
+                effortlessly in the cloud. The Secure Serverless Recipe sharing App delivers lightning‑fast performance,
+                strong user authentication, and seamless access from anywhere. Powered by AWS and automated with
+                Terraform, it's built to scale as your recipe collection grows while keeping your data safe and your
+                experience smooth.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Blog Post 5 -->
+        <div class="col-12 blog-post" data-page="2" style="display: none;">
+          <article class="box style2"
+            style="display: flex; align-items: flex-start; padding-bottom: 0.5em; margin-bottom: 0.5em;">
+            <div class="blog-image-container" style="flex: 0 0 200px; margin-right: 1.5em;">
+              <a
+                href="https://blog.monvillarin.com/from-resume-to-the-cloud-how-i-built-and-deployed-my-cloud-resume-challenge">
+                <img src="images/cloud-resume-challenege.png" alt=""
+                  style="width: 100%; height: auto; border-radius: 4px;" />
+              </a>
+            </div>
+            <div class="blog-content-container" style="flex: 1;">
+              <h3 style="text-align: left;"><a
+                  href="https://blog.monvillarin.com/from-resume-to-the-cloud-how-i-built-and-deployed-my-cloud-resume-challenge">From
+                  Resume to the Cloud: How I Built and Deployed My Cloud Resume Challenge</a></h3>
+              <p style="text-align: left;">A hands-on journey of building and deploying a cloud-native resume website
+                using AWS, serverless technologies, and Infrastructure as Code.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Pagination Controls -->
+      <div class="row" style="margin-top: 2em;">
+        <div class="col-12" style="text-align: center;">
+          <div id="pagination-controls">
+            <span id="page-info" style="font-weight: bold;">Page 1 of 2</span>
+            <div class="pagination-buttons">
+              <button id="prev-btn" class="button" onclick="changePage(-1)" disabled>← Previous</button>
+              <button id="next-btn" class="button" onclick="changePage(1)">Next →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </article>
+
+  <!-- Contact -->
+  <article id="contact" class="wrapper style4">
+    <div class="container medium">
+      <header>
+        <h2>Let's open up the cloud.</h2>
+        <p>Reach out via the contact form below. P.S. no XSS pls. :)</p>
+      </header>
+
+      <div class="row">
+        <div class="col-12">
+          <form method="post" action="https://formspree.io/f/xldnolnk">
+            <div class="row">
+              <div class="col-6 col-12-small">
+                <input type="text" name="name" id="name" placeholder="Name" />
+              </div>
+              <div class="col-6 col-12-small">
+                <input type="text" name="email" id="email" placeholder="Email" />
+              </div>
+              <div class="col-12">
+                <input type="text" name="subject" id="subject" placeholder="Subject" />
+              </div>
+              <div class="col-12">
+                <textarea name="message" id="message" placeholder="Message"></textarea>
+              </div>
+              <div class="col-12">
+                <ul class="actions">
+                  <li><input type="submit" value="Send Message" /></li>
+                  <li><input type="reset" value="Clear Form" class="alt" /></li>
+                </ul>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-12">
+          <hr />
+          <h3>Find me on ...</h3>
+          <ul class="social">
+            <li><a href="https://www.linkedin.com/in/ramon-villarin/" class="icon brands fa-linkedin-in"
+                target="_blank"><span class="label">LinkedIn</span></a></li>
+            <li><a href="https://github.com/kurokood" class="icon brands fa-github" target="_blank"><span
+                  class="label">Github</span></a></li>
+            <li><a href="https://blog.monvillarin.com/" class="icon brands fa-blogger" target="_blank"><span
+                  class="label">Blogger</span></a></li>
+          </ul>
+
+          <br />
+          <div id="visitor-count">
+            You are visitor number:<br />
+            <span id="visitor-number">Loading...</span>
+          </div>
+
+          <script>
+            async function updateVisitorCount() {
+              try {
+                const response = await fetch('https://ckl3yj2h06.execute-api.us-east-1.amazonaws.com/VisitorCounter');
+                const data = await response.json();
+                document.getElementById('visitor-number').textContent = data.total_unique_visits;
+              } catch (error) {
+                console.error('Error fetching visitor count:', error);
+                document.getElementById('visitor-number').textContent = 'Error';
+              }
+            }
+
+            updateVisitorCount();
+          </script>
+
+
+          <hr />
+        </div>
+      </div>
+
+      <footer>
+        <ul id="copyright">
+          <li>&copy; Mon Villarin. All rights reserved.</li>
+          <li>Powered by: AWS</li>
+        </ul>
+      </footer>
+    </div>
+  </article>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Blog Pagination Script -->
+  <script>
+    let currentPage = 1;
+    const totalPages = 2;
+    const postsPerPage = 3;
+
+    function showPage(page) {
+      // Hide all blog posts
+      const allPosts = document.querySelectorAll('.blog-post');
+      allPosts.forEach(post => {
+        post.style.display = 'none';
+      });
+
+      // Show posts for current page
+      const postsToShow = document.querySelectorAll(`[data-page="${page}"]`);
+      postsToShow.forEach(post => {
+        post.style.display = 'block';
+      });
+
+      // Update pagination controls
+      document.getElementById('page-info').textContent = `Page ${page} of ${totalPages}`;
+
+      // Update button states
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+
+      prevBtn.disabled = (page === 1);
+      nextBtn.disabled = (page === totalPages);
+
+      if (prevBtn.disabled) {
+        prevBtn.style.opacity = '0.5';
+        prevBtn.style.cursor = 'not-allowed';
+      } else {
+        prevBtn.style.opacity = '1';
+        prevBtn.style.cursor = 'pointer';
+      }
+
+      if (nextBtn.disabled) {
+        nextBtn.style.opacity = '0.5';
+        nextBtn.style.cursor = 'not-allowed';
+      } else {
+        nextBtn.style.opacity = '1';
+        nextBtn.style.cursor = 'pointer';
+      }
+    }
+
+    function changePage(direction) {
+      const newPage = currentPage + direction;
+      if (newPage >= 1 && newPage <= totalPages) {
+        currentPage = newPage;
+        showPage(currentPage);
+      }
+    }
+
+    // Initialize pagination on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      showPage(1);
+    });
+  </script>
 
 </body>
+
 </html>
