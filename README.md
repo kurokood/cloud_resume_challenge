@@ -34,7 +34,7 @@ This project serves as a solid foundation for gaining hands-on experience with s
 - Applied Infrastructure as Code (IaC) using Terraform to manage and provision AWS resources efficiently.
 - Integrated CI/CD workflows with GitHub Actions to automate testing and deployments.
 - Strengthened understanding of cloud architecture, automation, and scalability principles.
-
+---
 ###  Author: Mon Villarin
  📌 LinkedIn: [Ramon Villarin](https://www.linkedin.com/in/ramon-villarin/)  
  📌 Portfolio Site: [MonVillarin.com](https://monvillarin.com)  
