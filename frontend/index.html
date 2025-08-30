@@ -486,6 +486,29 @@
             style="display: flex; align-items: flex-start; padding-bottom: 0.5em; margin-bottom: 0.5em;">
             <div class="blog-image-container" style="flex: 0 0 200px; margin-right: 1.5em;">
               <a
+                href="https://blog.monvillarin.com/traditional-3-tier-website-deployment-on-aws-a-real-world-case-study">
+                <img src="images/3-tier-website-deployment.png" alt=""
+                  style="width: 100%; height: auto; border-radius: 4px;" />
+              </a>
+            </div>
+            <div class="blog-content-container" style="flex: 1;">
+              <h3 style="text-align: left;"><a
+                  href="https://blog.monvillarin.com/traditional-3-tier-website-deployment-on-aws-a-real-world-case-study">
+                  Traditional 3-Tier Website Deployment on AWS</a></h3>
+              <p style="text-align: left;">A case study of deploying a production-ready WordPress solution on AWS using
+                Terraform and 3-tier architecture—highlighting scalability, security, high availability, and practical
+                lessons
+                from modern cloud infrastructure design.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="col-12 blog-post" data-page="1">
+          <article class="box style2"
+            style="display: flex; align-items: flex-start; padding-bottom: 0.5em; margin-bottom: 0.5em;">
+            <div class="blog-image-container" style="flex: 0 0 200px; margin-right: 1.5em;">
+              <a
                 href="https://blog.monvillarin.com/real-time-stock-market-data-analytics-pipeline-on-aws-with-terraform">
                 <img src="images/stock-market-data-pipeline.png" alt=""
                   style="width: 100%; height: auto; border-radius: 4px;" />
@@ -496,13 +519,14 @@
                   href="https://blog.monvillarin.com/real-time-stock-market-data-analytics-pipeline-on-aws-with-terraform">
                   Real-Time Stock Market Data Analytics Pipeline on AWS with Terraform</a></h3>
               <p style="text-align: left;">Building a real-time stock market analytics pipeline on AWS using Terraform.
-                It shows how to ingest, process, archive, and analyze stock data with services like Kinesis, Lambda, DynamoDB,
+                It shows how to ingest, process, archive, and analyze stock data with services like Kinesis, Lambda,
+                DynamoDB,
                 S3, Glue, and Athena—delivering cost-efficient, serverless insights that scale with demand.</p>
             </div>
           </article>
         </div>
 
-        <!-- Blog Post 2 -->
+        <!-- Blog Post 3 -->
         <div class="col-12 blog-post" data-page="1">
           <article class="box style2"
             style="display: flex; align-items: flex-start; padding-bottom: 0.5em; margin-bottom: 0.5em;">
@@ -524,8 +548,8 @@
           </article>
         </div>
 
-        <!-- Blog Post 3 -->
-        <div class="col-12 blog-post" data-page="1">
+        <!-- Blog Post 4 -->
+        <div class="col-12 blog-post" data-page="2" style="display: none;">
           <article class="box style2"
             style="display: flex; align-items: flex-start; padding-bottom: 0.5em; margin-bottom: 0.5em;">
             <div class="blog-image-container" style="flex: 0 0 200px; margin-right: 1.5em;">
@@ -546,8 +570,8 @@
           </article>
         </div>
 
-        <!-- Blog Post 4 -->
-        <div class="col-12 blog-post" data-page="2">
+        <!-- Blog Post 5 -->
+        <div class="col-12 blog-post" data-page="2" style="display: none;">
           <article class="box style2"
             style="display: flex; align-items: flex-start; padding-bottom: 0.5em; margin-bottom: 0.5em;">
             <div class="blog-image-container" style="flex: 0 0 200px; margin-right: 1.5em;">
@@ -568,7 +592,7 @@
           </article>
         </div>
 
-        <!-- Blog Post 5 -->
+        <!-- Blog Post 6 -->
         <div class="col-12 blog-post" data-page="2" style="display: none;">
           <article class="box style2"
             style="display: flex; align-items: flex-start; padding-bottom: 0.5em; margin-bottom: 0.5em;">
@@ -591,8 +615,8 @@
           </article>
         </div>
 
-        <!-- Blog Post 6 -->
-        <div class="col-12 blog-post" data-page="2" style="display: none;">
+        <!-- Blog Post 7 -->
+        <div class="col-12 blog-post" data-page="3" style="display: none;">
           <article class="box style2"
             style="display: flex; align-items: flex-start; padding-bottom: 0.5em; margin-bottom: 0.5em;">
             <div class="blog-image-container" style="flex: 0 0 200px; margin-right: 1.5em;">
@@ -611,13 +635,15 @@
             </div>
           </article>
         </div>
+
+
       </div>
 
       <!-- Pagination Controls -->
       <div class="row" style="margin-top: 2em;">
         <div class="col-12" style="text-align: center;">
           <div id="pagination-controls">
-            <span id="page-info" style="font-weight: bold;">Page 1 of 2</span>
+            <span id="page-info" style="font-weight: bold;">Page 1 of 3</span>
             <div class="pagination-buttons">
               <button id="prev-btn" class="button" onclick="changePage(-1)" disabled>← Previous</button>
               <button id="next-btn" class="button" onclick="changePage(1)">Next →</button>
@@ -722,7 +748,7 @@
   <!-- Blog Pagination Script -->
   <script>
     let currentPage = 1;
-    const totalPages = 2;
+    const totalPages = 3;
     const postsPerPage = 3;
 
     function showPage(page) {
