@@ -14,7 +14,7 @@ Happy learning! ☁️
 
 ## Architectural Diagram
 
-![](https://github.com/kurokood/cloud_resume_challenge/blob/master/cloud-resume-challenge.png)
+![](https://github.com/kurokood/cloud_resume_challenge/blob/master/frontend/images/cloud-resume-challenege.png)
 
 ## Architectural Components
 | Components           | Description                                                             |
