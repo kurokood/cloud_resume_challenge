@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Gothic Wednesday-inspired color palette */
+    --background: 270 30% 6%;
+    --foreground: 0 0% 90%;
+
+    --card: 270 25% 10%;
+    --card-foreground: 0 0% 90%;
+
+    --popover: 270 30% 8%;
+    --popover-foreground: 0 0% 90%;
+
+    --primary: 270 60% 25%;
+    --primary-foreground: 0 0% 95%;
+
+    --secondary: 270 20% 15%;
+    --secondary-foreground: 0 0% 85%;
+
+    --muted: 270 15% 20%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 280 50% 35%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 270 20% 20%;
+    --input: 270 20% 18%;
+    --ring: 280 60% 45%;
+
+    --radius: 0.5rem;
+
+    /* Gothic design tokens */
+    --gothic-purple: 270 60% 25%;
+    --gothic-dark: 270 30% 8%;
+    --gothic-darker: 270 40% 4%;
+    --gothic-silver: 0 0% 70%;
+    --gothic-mist: 270 20% 15%;
+    
+    /* Shadows and glows */
+    --shadow-candle: 0 4px 20px hsl(40 100% 50% / 0.3);
+    --glow-purple: 0 0 30px hsl(280 60% 45% / 0.5);
+    
+    /* Gradients */
+    --gradient-gothic: linear-gradient(180deg, hsl(270 30% 6%), hsl(270 40% 4%));
+    --gradient-mist: linear-gradient(180deg, hsl(270 30% 6% / 0), hsl(270 30% 15% / 0.3));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cinzel', serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .gothic-glow {
+    animation: candle-flicker 3s ease-in-out infinite;
+  }
+  
+  .fog-animation {
+    animation: fog-drift 20s ease-in-out infinite;
+  }
+  
+  @keyframes candle-flicker {
+    0%, 100% {
+      opacity: 0.9;
+      filter: brightness(1);
+    }
+    50% {
+      opacity: 1;
+      filter: brightness(1.1);
+    }
+  }
+  
+  @keyframes fog-drift {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateX(30px) translateY(-10px);
+      opacity: 0.5;
+    }
+  }
+  
+  /* Video.js custom gothic styling */
+  .video-js {
+    font-family: 'Cinzel', serif;
+  }
+  
+  .video-js .vjs-big-play-button {
+    background-color: hsl(var(--primary));
+    border: 2px solid hsl(var(--gothic-silver));
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    transition: all 0.3s ease;
+  }
+  
+  .video-js .vjs-big-play-button:hover {
+    background-color: hsl(var(--accent));
+    box-shadow: var(--glow-purple);
+    transform: scale(1.05);
+  }
+  
+  .video-js .vjs-control-bar {
+    background: linear-gradient(180deg, transparent, hsl(270 40% 4% / 0.95));
+  }
+  
+  .video-js .vjs-slider {
+    background-color: hsl(var(--gothic-mist));
+  }
+  
+  .video-js .vjs-play-progress {
+    background-color: hsl(var(--accent));
+  }
+}
