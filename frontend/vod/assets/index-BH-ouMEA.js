@@ -1,3 +1,27 @@
+// PATCH: Force mobile compatibility for Video.js player
+window.addEventListener('DOMContentLoaded', function() {
+  var videoEls = document.querySelectorAll('video');
+  videoEls.forEach(function(el) {
+    el.setAttribute('playsinline', '');
+    el.setAttribute('muted', '');
+    el.setAttribute('autoplay', '');
+    el.setAttribute('controls', '');
+  });
+  if (window.videojs) {
+    var players = window.videojs.getPlayers ? Object.values(window.videojs.getPlayers()) : [];
+    if (players.length === 0 && window.videojs('my-video')) {
+      players = [window.videojs('my-video')];
+    }
+    players.forEach(function(player) {
+      try {
+        player.autoplay(true);
+        player.muted(true);
+        player.playsinline(true);
+        player.controls(true);
+      } catch(e) {}
+    });
+  }
+});
 var Fv=t=>{throw TypeError(t)};var Yf=(t,e,n)=>e.has(t)||Fv("Cannot "+n);var q=(t,e,n)=>(Yf(t,e,"read from private field"),n?n.call(t):e.get(t)),Ee=(t,e,n)=>e.has(t)?Fv("Cannot add the same private member more than once"):e instanceof WeakSet?e.add(t):e.set(t,n),me=(t,e,n,i)=>(Yf(t,e,"write to private field"),i?i.call(t,n):e.set(t,n),n),Et=(t,e,n)=>(Yf(t,e,"access private method"),n);var Dc=(t,e,n,i)=>({set _(r){me(t,e,r,n)},get _(){return q(t,e,i)}});function Ek(t,e){for(var n=0;n<e.length;n++){const i=e[n];if(typeof i!="string"&&!Array.isArray(i)){for(const r in i)if(r!=="default"&&!(r in t)){const s=Object.getOwnPropertyDescriptor(i,r);s&&Object.defineProperty(t,r,s.get?s:{enumerable:!0,get:()=>i[r]})}}}return Object.freeze(Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}))}(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))i(r);new MutationObserver(r=>{for(const s of r)if(s.type==="childList")for(const a of s.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&i(a)}).observe(document,{childList:!0,subtree:!0});function n(r){const s={};return r.integrity&&(s.integrity=r.integrity),r.referrerPolicy&&(s.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?s.credentials="include":r.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function i(r){if(r.ep)return;r.ep=!0;const s=n(r);fetch(r.href,s)}})();var bd=typeof globalThis<"u"?globalThis:typeof window<"u"?window:typeof global<"u"?global:typeof self<"u"?self:{};function Ys(t){return t&&t.__esModule&&Object.prototype.hasOwnProperty.call(t,"default")?t.default:t}function f2(t){if(t.__esModule)return t;var e=t.default;if(typeof e=="function"){var n=function i(){return this instanceof i?Reflect.construct(e,arguments,this.constructor):e.apply(this,arguments)};n.prototype=e.prototype}else n={};return Object.defineProperty(n,"__esModule",{value:!0}),Object.keys(t).forEach(function(i){var r=Object.getOwnPropertyDescriptor(t,i);Object.defineProperty(n,i,r.get?r:{enumerable:!0,get:function(){return t[i]}})}),n}var p2={exports:{}},Eh={},m2={exports:{}},xe={};/**
  * @license React
  * react.production.min.js
